@@ -2,12 +2,12 @@ const express = require('express');
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const path = require("path");
-const https = require('https');
 const app = express();
 const axios = require('axios');
 const { response } = require('express');
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
 // To Use CSS
 app.use(express.static(__dirname + "/public"));
 app.set("views", path.join(__dirname, "views"));
@@ -17,6 +17,7 @@ app.get("/",(req,res)=>{
     res.render("home");
 });
 
+// Testing Endpoint
 const url = "https://global-warming.org/api/temperature-api";
 
 
