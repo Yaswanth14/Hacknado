@@ -1,13 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-</head>
-<body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+      integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="/home/subhani/Desktop/Stuff/Hacknado/node_modules/chartjs-plugin-zoom/dist/chartjs-plugin-zoom.min.js"></script>
+  </head>
+  <body>
     <h1>Welcome to Save Earth</h1>
-</body>
+    <canvas id="myChart"></canvas>
+
+    <script>
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var input_values = "<%= val%>";
+      var input_labels = "<%= lab%>";
+      // console.log(typeof(khadir))
+      console.log(input_values);
+      let v = input_values.split(",");
+      let values = [];
+      v.forEach((item) => {
+        values.push(parseFloat(item));
+      });
+
+      let l = input_labels.split(",");
+      let labels = [];
+      l.forEach((item) => {
+        labels.push(parseFloat(item));
+      });
+      console.log(values);
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: "Magic",
+            data: values,
+            backgroundColor: [
+              "rgb(255, 99, 132)",
+              // "rgb(54, 162, 235)",
+              // "rgb(255, 205, 86)",
+            ],
+            // borderColor: "rgb(255, 99, 132)",
+            hoverOffset: 4,
+          },
+        ],
+      };
+
+      const config = {
+        type: "line",
+        data: data,
+        options: {
+          // responsive:true,
+          // responsive:false,
+          // animations: {
+          //     tension: {
+          //         duration: 1000,
+          //         easing:'easing',
+          //         from: 1,
+          //         to: 0,
+          //         loop: true
+          //     }
+          // },
+          scales: {
+            y: {
+              // defining min and max so hiding the dataset does not change scale range
+              min: -1.5,
+              max: 2,
+            },
+          },
+          plugins: {
+            zoom: {
+              zoom: {
+                wheel: {
+                  enabled: true,
+                },
+                pinch: {
+                  enabled: true,
+                },
+                mode: "xy",
+              },
+            },
+          },
+        },
+      };
+
+      var myChart = new Chart(ctx, config);
+    </script>
+  </body>
 </html>
