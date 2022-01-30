@@ -36,7 +36,9 @@
 
   </header>
     <!-- <h1>Welcome to Save Earth</h1> -->
-    <canvas id="myChart"></canvas>
+    <div calss="chart" style="display: flex; align-items: center; justify-content: center;">
+      <canvas id="myChart" style="width: 80vw; height: 70vh; background-color: white; border-radius: 10px; padding: 1.6rem; border-style: solid; border-color: tomato;"></canvas>
+    </div>
 
     <script>
       var ctx = document.getElementById("myChart").getContext("2d");
@@ -59,15 +61,16 @@
         labels: labels,
         datasets: [
           {
-            label: "Magic",
+            label: "Temperatrue Change",
             data: values,
             backgroundColor: [
               "rgb(255, 99, 132)",
               // "rgb(54, 162, 235)",
               // "rgb(255, 205, 86)",
             ],
-            // borderColor: "rgb(255, 99, 132)",
+            borderColor: "rgb(255, 99, 132)",
             hoverOffset: 4,
+            borderWidth:0.9,
           },
         ],
       };
@@ -76,8 +79,11 @@
         type: "line",
         data: data,
         options: {
+          // fill:true,
+          pointRadius:0,
+          // lineTension:0.5,
           // responsive:true,
-          // responsive:false,
+          responsive:false,
           // animations: {
           //     tension: {
           //         duration: 1000,
