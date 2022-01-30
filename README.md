@@ -33,3 +33,6 @@ This is our first Hackathon and even after facing these many problems, after spe
 1. We need to improve the UI
 2. Add a few more APIs that would give updates with the latest news regarding climate changes.
 3. Make it more user-friendly.
+
+
+[Click me](https://save-earth-save.us) to view the website
