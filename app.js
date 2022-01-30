@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 const axios = require('axios');
 const { response } = require('express');
-
+const port = process.env.PORT||8080;
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // To Use CSS
@@ -86,6 +86,6 @@ app.get("/polar",(req,res)=>{
             console.log(error);
         })
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("App is running!!");
 })
