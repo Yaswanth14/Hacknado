@@ -10,6 +10,8 @@ We as humans only think about anything when we ourselves see the impact, so we t
 This site delivers up-to-date information about the earth's current temperature, the concentration of greenhouse gases in the atmosphere, and worldwide news and articles about global warming and deforestation.
 
 
+![stat image](https://github.com/Yaswanth14/Hacknado/blob/yash/public/images/image4.png?raw=true)
+
 ## 🛠 How we built it
 We used an API to collect data regarding climate change, Methane levels, melted polar ice caps, and used Chartjs to visualize the retrieved data and present them on our website. We used **Html**, **CSS** for the front-end, **Node.js**, **Express** for the backend and deployed the project in **Google Cloud**.
 
@@ -31,3 +33,6 @@ This is our first Hackathon and even after facing these many problems, after spe
 1. We need to improve the UI
 2. Add a few more APIs that would give updates with the latest news regarding climate changes.
 3. Make it more user-friendly.
+
+
+[Click me](https://save-earth-save.us) to view the website
