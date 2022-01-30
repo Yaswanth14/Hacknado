@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SESU</title>
-    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" href="/css/app.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
       integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
@@ -36,7 +36,9 @@
 
   </header>
     <!-- <h1>Welcome to Save Earth</h1> -->
-    <canvas id="myChart"></canvas>
+    <div calss="chart" style="display: flex; align-items: center; justify-content: center;">
+      <canvas id="myChart" style="width: 80vw; height: 70vh; background-color: white; border-radius: 10px; padding: 1.6rem; border-style: solid; border-color: tomato;"></canvas>
+    </div>
 
     <script>
       var ctx = document.getElementById("myChart").getContext("2d");
@@ -59,10 +61,10 @@
         labels: labels,
         datasets: [
           {
-            label: "Magic",
+            label: "Polar Area",
             data: values,
             backgroundColor: [
-              "rgb(255, 99, 132)",
+              "rgb(135,206,235)",
             ],
             // borderColor: "rgb(255, 99, 132)",
             hoverOffset: 4,
@@ -74,8 +76,11 @@
         type: "line",
         data: data,
         options: {
+          lineTension:0.5,
+          fill:true,
+          // pointRadius:1,
           // responsive:true,
-          // responsive:false,
+          responsive:false,
           // animations: {
           //     tension: {
           //         duration: 1000,
@@ -87,22 +92,17 @@
           // },
           scales: {
             y: {
+              // display:true,
+              // text:"Stra",
               // defining min and max so hiding the dataset does not change scale range
             //   min: -1.5,
             //   max: 2,
             },
           },
-          plugins: {
-            zoom: {
-              zoom: {
-                wheel: {
-                  enabled: true,
-                },
-                pinch: {
-                  enabled: true,
-                },
-                mode: "xy",
-              },
+          plugins:{
+            title:{
+              display:true,
+              text:"Polar Area",
             },
           },
         },
