@@ -36,3 +36,4 @@ This is our first Hackathon and even after facing these many problems, after spe
 
 
 [Click me](https://save-earth-save.us) to view the website
+-The website is no more live as we ran out of Credits :sweat_smile:
